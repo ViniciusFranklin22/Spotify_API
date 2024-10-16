@@ -1,0 +1,101 @@
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: #121212; /* Fundo escuro */
+    color: #ffffff; /* Texto branco */
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2.5em;
+    color: #1db954; /* Verde do Spotify */
+}
+
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Sombra da tabela */
+}
+
+table, th, td {
+    border: 1px solid #282828; /* Bordas escuras */
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+}
+
+th {
+    background-color: #2b2b2b; /* Novo fundo suave para o cabeçalho */
+    color: #1db954; /* Verde do Spotify para o texto */
+    font-weight: bold; /* Negrito */
+    font-size: 1.1em; /* Tamanho de fonte maior para o cabeçalho */
+    letter-spacing: 1px; /* Espaçamento entre letras */
+}
+
+tr:nth-child(even) {
+    background-color: #282828; /* Linhas pares */
+}
+
+tr:hover {
+    background-color: #333333; /* Efeito de hover */
+}
+
+.button-container {
+    text-align: center;
+    margin: 20px auto;
+}
+
+button {
+    padding: 12px 25px;
+    font-size: 16px;
+    background-color: #1db954; /* Verde do Spotify */
+    color: white;
+    border: none;
+    border-radius: 25px; /* Bordas arredondadas */
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Transição suave */
+}
+
+button:hover {
+    background-color: #1aa34a; /* Tom mais escuro no hover */
+}
+
+/* Estilo do botão de preview com imagem */
+.preview-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center; /* Centraliza o conteúdo dentro do botão */
+    background-image: url('https://via.placeholder.com/100'); /* Imagem de fundo */
+    background-size: cover; /* Faz a imagem cobrir todo o botão */
+    width: 100px; /* Largura do botão */
+    height: 40px; /* Altura do botão */
+    color: white; /* Cor do texto */
+    border: none; /* Remove a borda */
+    cursor: pointer; /* Muda o cursor para pointer */
+    text-align: center; /* Centraliza o texto */
+}
+
+.preview-button:hover {
+    opacity: 0.8; /* Efeito ao passar o mouse */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    table {
+        width: 90%;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    button {
+        width: 100%;
+        font-size: 18px;
+    }
+}
