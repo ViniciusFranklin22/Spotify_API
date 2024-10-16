@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Spotify</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    </head>
+    <body>
+        <img src="{{ url_for('static', filename='spotify_template_logo.png') }}">
+
+        <!-- Faixa atual -->
+        <div id="current-track">
+            <table>
+                <thead>
+                    <tr>
+                        <th>User</th>
+                        <th>Last Artist</th>
+                        <th>Last Song</th>
+                        <th>Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for last_track in last_tracks %}
+                    <tr>
+                        <td>{{ last_track.user }}</td>
+                        <td>{{ last_track.artist }}</td>
+                        <td>{{ last_track.name }}</td>
+                        <td>{{ last_track.time }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Seção de formulários -->
+        <div id="forms-container">
+            <form action="saveDiscoverWeekly" method="get">
+                {% for message in get_flashed_messages() %}
+                    <p>{{ message }}</p>
+                {% endfor %}
+                <input type="submit" value="Save Weekly Playlist" id="save_weekly">
+            </form>
+
+            <form action="getTopUserTracks" method="get">
+                <input type="hidden" name="time_range" value="short_term">
+                <input type="submit" value="Top Tracks From Last Month" id="top_tracks_short_term">
+            </form>
+
+            <form action="getTopUserTracks" method="get">
+                <input type="hidden" name="time_range" value="medium_term">
+                <input type="submit" value="Top Tracks From Last 6 Months" id="top_tracks_medium_term">
+            </form>
+
+            <form action="getTopUserTracks" method="get">
+                <input type="hidden" name="time_range" value="long_term">
+                <input type="submit" value="Top Tracks From Last Year" id="top_tracks_long_term">
+            </form>
+
+            <form action="getTopUserArtists" method="get">
+                <input type="hidden" name="time_range" value="short_term">
+                <input type="submit" value="Top Artists From Last Month" id="top_artists_short_term">
+            </form>
+            <form action="getTopUserArtists" method="get">
+                <input type="hidden" name="time_range" value="medium_term">
+                <input type="submit" value="Top Artists From Last 6 Months" id="top_artists_medium_term">
+            </form>
+
+            <form action="getTopUserArtists" method="get">
+                <input type="hidden" name="time_range" value="long_term">
+                <input type="submit" value="Top Artists From Last Year" id="top_artists_long_term">
+            </form>
+
+        </div>
+    </body>
+</html>

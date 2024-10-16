@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify Top Artists</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/top_artists.css') }}">
+    <style>
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .button-container {
+            text-align: center;
+            margin: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>
+        {% for message in get_flashed_messages() %}
+            <p>{{ message }}</p>
+        {% endfor %}
+    </h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Position</th>
+                <th>Artist</th>
+                <th>Genres</th>
+                <th>Followers</th>
+                <th>Spotify Page</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for song in songs %}
+            <tr>
+                <td>{{ song.position }}</td>
+                <td>{{ song.artist }}</td>
+                <td>{{ song.genres }}</td>
+                <td>{{ song.followers }}</td>
+                <td>
+                    <a href="{{ song.href }}" target="_blank">
+                        <img src="{{ song.image }}" alt="Preview" width="50" height="50">
+                    </a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <div class="button-container">
+        <form action="{{ url_for('redirect_page') }}" method="get" target="_self"> <!-- Assegurando que não abra nova aba -->
+            <button type="submit">Back to Home</button>
+        </form>
+    </div>
+
+    <div class="button-container">
+        <form action="{{ url_for('get_top_user_artists') }}" method="get">
+            <input type="hidden" name="send_email" value="send_email">
+            <button type="submit">Send in the E-mail</button>
+        </form>
+    </div>
+
+</body>
+</html>
