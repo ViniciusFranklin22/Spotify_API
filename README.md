@@ -4,7 +4,7 @@
 This project showcases two different applications interacting with the Spotify API. One retrieves user-specific data via OAuth authentication, while the other uses the Client Credentials Flow to access public data. Both applications require a Spotify Developer account to obtain the necessary client ID and client secret, which should be stored in a `.env` file.
 
 ## Project 1: Spotify User Data
-Located in the `/Spotify_User_Data` directory, this application uses OAuth to access user-specific Spotify data. The project was developed using Css,Html, Python - Flask, with Spotipy to manage API interactions. Key features include:
+Located in the `/Spotify_User_Data` directory, this application uses OAuth to access user-specific Spotify data. The project was developed using Css, Html, Python - Flask, with Spotipy to manage API interactions. Key features include:
 
 ### Features:
 - Display user's last played track.
