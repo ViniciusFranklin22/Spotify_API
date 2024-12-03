@@ -15,7 +15,7 @@ Located in the `/Spotify_User_Data` directory, this application uses OAuth to ac
 ### Local Subnet Setup:
 The app was configured to run within my local subnet, allowing others connected to it to use the app. Since it’s a demo, there was no need to host it on a public server.
 
-[Watch the demo on YouTube](https://www.youtube.com/watch?v=6bzcADyrt8w).
+[Watch the demo on YouTube](https://www.youtube.com/watch?v=KtT9-3Nu3h8).
 
 ## Project 2: Spotify Without User Data
 In the `/Spotify` directory, this app interacts with Spotify's API using Client Credentials Flow, which does not require user authentication. The process of manually obtaining an access token is done via API calls, which is used to fetch public data like track and artist details.
